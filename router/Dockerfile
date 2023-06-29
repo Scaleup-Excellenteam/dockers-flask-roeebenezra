@@ -2,10 +2,10 @@
 FROM alpine:latest
 
 # Install required packages
-RUN apk update && apk add python3
+RUN apk update && apk add python3 python3-dev py3-pip
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /Docker & Flask Ex
 
 # Copy the application files
 COPY router.py .
@@ -13,8 +13,8 @@ COPY router.py .
 # Install dependencies
 RUN pip3 install flask
 
-# Expose the port
-EXPOSE 5000
+# Expose the port for communication with language executors
+EXPOSE 5001 5002 5003
 
 # Set the entrypoint command
-CMD ["python3", "main_app.py"]
+CMD ["python3", "router.py"]
